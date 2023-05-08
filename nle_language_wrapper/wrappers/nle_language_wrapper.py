@@ -204,9 +204,10 @@ class NLELanguageWrapper(Wrapper):
         Args:
             nle_obsv (dict): nle observation from base environment
         Returns:
-            (dict): language observation
+            (dict): "classic" nle observation + language observation
         """
-        return self.nle_obsv_to_language(nle_obsv)
+        nle_obsv.update(self.nle_obsv_to_language(nle_obsv))
+        return nle_obsv
 
     def reset(self, **kwargs):
         self.pre_reset()
@@ -221,9 +222,10 @@ class NLELanguageWrapper(Wrapper):
         Args:
             nle_obsv (dict): nle observation from base environment
         Returns:
-            (dict): language observation
+            (dict): "classic" nle observation + language observation
         """
-        return self.nle_obsv_to_language(obsv)
+        obsv.update(self.nle_obsv_to_language(obsv))
+        return obsv
 
     def __init__(self, env, use_language_action=True):
         """Initialize the wrapper
