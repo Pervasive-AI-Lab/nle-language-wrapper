@@ -179,10 +179,12 @@ On Ubuntu you may also require additional dependencies, follow the steps at http
 
 ### Installation
 
-To use the environment you can install it directly from PyPI.
+You can install the package by cloning the repository and then installing it using ```pip```
 
 ```
-pip install nle-language-wrapper
+git clone --recursive https://github.com/Pervasive-AI-Lab/nle-language-wrapper.git
+cd nle-language-wrapper
+pip install .
 ```
 
 ### Google Colab
@@ -244,10 +246,10 @@ obsv = env.reset()
 obsv, reward, done, info = env.step("wait")
 ```
 
-Alternatively to utilize the discrete actions rather than language actions specify `use-text-action=True`.
+Alternatively to utilize the discrete actions rather than language actions specify `use-text-action=False`.
 
 ```
-env = NLELanguageWrapper(gym.make("NetHackChallenge-v0"),  use_language_action=text)
+env = NLELanguageWrapper(gym.make("NetHackChallenge-v0"),  use_language_action=False)
 obsv = env.reset()
 wait_action = 17
 obsv, reward, done, info = env.step(wait_action)
