@@ -91,7 +91,7 @@ if __name__ == "__main__":
         description=("Language Wrapper for the NetHack Learning Environment (NLE) "),
         long_description=long_description,
         long_description_content_type="text/markdown",
-        author="Nikolaj Goodger",
+        author="Nikolaj Goodger, slightly modified by lquara",
         url="https://github.com/ngoodger/nle-language-wrapper",
         license="MIT License",
         packages=packages,
